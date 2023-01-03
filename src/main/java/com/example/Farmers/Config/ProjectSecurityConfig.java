@@ -35,10 +35,10 @@ public class ProjectSecurityConfig {
         }
     }
         )
-        .and().csrf().ignoringAntMatchers("/contact","/welcome","/farmers/register","/farmers/{id}","/farmers").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+        .and().csrf().ignoringAntMatchers("/contact","/welcome","/farmers/register","/farmers/{id}","/farmers","/farmers/update/{id}","/farmers/delete/{id}").csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
 				.and().authorizeRequests()
-				.antMatchers("/account","/user").authenticated()
-				.antMatchers("/contact","welcome","/farmers/register","/farmers/{id}","/farmers").permitAll()
+				.antMatchers().authenticated()
+				.antMatchers("/contact","welcome","/farmers/register","/farmers/{id}","/farmers","/farmers/update/{id}","/farmers/delete/{id}").permitAll()
 		.and().formLogin()
 		.and().httpBasic();
 		return http.build();

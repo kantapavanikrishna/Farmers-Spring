@@ -36,7 +36,9 @@ public class Farmers implements Serializable{
 	
 	private String product;
 	
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	
+	
+
 	private String pwd;
 	public Farmers(int id, String username, String phone, String address, String email, String product, String pwd) {
 		super();
@@ -53,6 +55,8 @@ public class Farmers implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 	
 	
 	public int getId() {

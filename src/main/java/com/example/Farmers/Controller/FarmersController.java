@@ -69,7 +69,7 @@ public class FarmersController {
 	    }
 //	 
 	 //update employee
-	 @PutMapping("/{id}")
+	 @PutMapping("/update/{id}")
 	    public ResponseEntity updateEmployeebyid(@RequestBody Farmers farmers,@PathVariable("id") int id) {
 	        try {
 	        	Farmers existfarmers= farmersRepository.findById(id).get();
@@ -80,7 +80,7 @@ public class FarmersController {
 	        }}
 	        
 	     
-	        @DeleteMapping("/{id}")
+	        @DeleteMapping("/delete/{id}")
 	        public void deleteEmployee(@PathVariable("id") int id) {
 	            this.farmersRepository.deleteById(id);
       }
